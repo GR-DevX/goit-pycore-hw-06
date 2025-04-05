@@ -67,36 +67,36 @@ class AddressBook(UserDict):
 # ------------------------ Приклад використання ------------------------
 
 if __name__ == "__main__":
-    print("📘 Створюємо нову адресну книгу...")
+    print(" Створюємо нову адресну книгу...")
     book = AddressBook()
 
-    print("\n👤 Додаємо Alex:")
+    print("\n Додаємо Alex:")
     alex_record = Record("Alex")
     alex_record.add_phone("1234567890")
     alex_record.add_phone("5555555555")
     book.add_record(alex_record)
 
-    print("\n👤 Додаємо Olena:")
+    print("\n Додаємо Olena:")
     olena_record = Record("Olena")
     olena_record.add_phone("9876543210")
     book.add_record(olena_record)
 
-    print("\n📋 Всі записи в адресній книзі:")
+    print("\n Всі записи в адресній книзі:")
     for name, record in book.data.items():
         print(record)
 
-    print("\n✏️ Редагуємо телефон Alex:")
+    print("\n Редагуємо телефон Alex:")
     alex = book.find("Alex")
     alex.edit_phone("1234567890", "1112223333")
     print(alex)
 
-    print("\n🔍 Пошук телефону у Alex:")
+    print("\n Пошук телефону у Alex:")
     found_phone = alex.find_phone("5555555555")
     print(f"{alex.name}: {found_phone}")
 
-    print("\n🗑 Видаляємо Olena з адресної книги:")
+    print("\n Видаляємо Olena з адресної книги:")
     book.delete("Olena")
 
-    print("\n📋 Поточна адресна книга:")
+    print("\n Поточна адресна книга:")
     for name, record in book.data.items():
         print(record)
